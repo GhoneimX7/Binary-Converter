@@ -7,6 +7,7 @@ package dbc;
 
 import java.util.Locale;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -22,7 +23,8 @@ public class DBC {
         //Initial variables
         Scanner sc = new Scanner(System.in);
         sc.useLocale(Locale.US);
-        double n = sc.nextDouble();
+        String input = JOptionPane.showInputDialog(null, "Enter the decimal number !");
+        double n = Double.parseDouble(input);
         int integer = (int) n;
         double nonInteger = n - integer;
         String leftFloatingPoint = "";
@@ -61,8 +63,7 @@ public class DBC {
                 break;
             }
         }
-
-        System.out.println(leftFloatingPoint + "." + rightFloatingPoint);
+        JOptionPane.showMessageDialog(null,"Binary: " + leftFloatingPoint + "." + rightFloatingPoint);
     }
 
 }
